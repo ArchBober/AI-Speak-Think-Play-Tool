@@ -17,7 +17,7 @@
 ### Audio input `hi.wav`
 
 <audio controls>
-  <source src="./Samples/hi.wav" type="audio/wav">
+  <source src="https://github.com/ArchBober/AI-Speak-Think-Play-Tool/blob/bde99810b367dbec86d04c3dd83dc2dcb17bc1f8/Samples/hi.wav" type="audio/wav">
   Your browser does not support the audio element.
 </audio>
 
@@ -68,7 +68,7 @@ Audio content written to file: response.mp3
 #### Audio Output 
 
 <audio controls>
-  <source src="./Samples/example_response2.mp3" type="audio/mpeg">
+  <source src="https://github.com/ArchBober/AI-Speak-Think-Play-Tool/blob/bde99810b367dbec86d04c3dd83dc2dcb17bc1f8/Samples/example_response2.mp3" type="audio/mpeg">
   Your browser does not support the video tag.
 </audio>
 
