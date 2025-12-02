@@ -17,3 +17,8 @@ Your name is Mark Spencer.
 TTS_PROMPT=f"""As a teacher of {LANGUAGE} language talk with calm and polite voice."""
 
 MAX_CHARS = 10000
+TTS_AUDIO_TOKEN_PRICE = 20
+TTS_TEXT_TOKEN_PRICE = 1
+
+LLM_INPUT_TOKEN_PRICE = 0.15
+LLM_OUTPUT_TOKEN_PRICE = 0.6

@@ -11,6 +11,15 @@ from tts import tts
 
 from dotenv import load_dotenv
 
+import warnings
+
+warnings.filterwarnings(
+    action="ignore",      
+    category=UserWarning,          
+    module=r"^pydub\.",           
+    message=r".*"                 
+)
+
 def main():
     load_dotenv()
 
