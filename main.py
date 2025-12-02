@@ -8,6 +8,8 @@ import os
 from stt import stt
 from llm import llm
 from tts import tts
+from config import OUTPUT_AUDIO_FILEPATH
+from help_description import HELP_DESCRIPTION
 
 from dotenv import load_dotenv
 
@@ -27,16 +29,25 @@ def main():
     api_key = os.environ.get("VERTEX_AI_API_KEY")
     secret_json_filepath = os.environ.get("SECRET_JSON_FILEPATH")
 
+    if "--help" in sys.argv:
+        print(HELP_DESCRIPTION)
 
     verbose = "--verbose" in sys.argv
+    prompt = "--prompt" in sys.argv
     args = []
     for arg in sys.argv[1:]:
         if not arg.startswith("--"):
             args.append(arg)
 
+    if prompt:
+        if len(args[0].strip()) < 1:
+            print("Prompt too short. Exiting.")
+            sys.exit(1)
+
     if not args:
         # TODO implement args
-        print("Audio-Text-Speach AI - no args")
+        print("Did not get necessary arguments.\n")
+        print(HELP_DESCRIPTION)
         sys.exit(1)
 
     if verbose:
@@ -45,6 +56,14 @@ def main():
     client_llm = genai.Client(
         vertexai=True, api_key=api_key
     )
+
+    if prompt:
+        if verbose:
+            print("User used flag --prompt. Overriding TTS transcription")
+            
+        transcription = args[0]
+    else:
+        transcription = stt(args[0], verbose)
 
     if verbose:
         print("Initializing TTS client")
@@ -55,9 +74,8 @@ def main():
         )
     )
 
-    transcription = stt("Samples/france.wav", verbose)
     llm_response = llm(client_llm, transcription, verbose)
-    tts(client_tts, llm_response, "response.mp3", verbose)
+    tts(client_tts, llm_response, OUTPUT_AUDIO_FILEPATH, verbose)
 
 
 

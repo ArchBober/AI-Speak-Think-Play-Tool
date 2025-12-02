@@ -1,3 +1,5 @@
+OUTPUT_AUDIO_FILEPATH = "response.mp3"
+
 LANGUAGE="en-US"
 LANGUAGE_LVL = "B1"
 SPEAKING_RATE = 1.2 # 1 is default - use range 0.5-2.0
