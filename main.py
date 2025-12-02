@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 
 import warnings
 
+# ignore regex warning from pydub
 warnings.filterwarnings(
     action="ignore",      
     category=UserWarning,          

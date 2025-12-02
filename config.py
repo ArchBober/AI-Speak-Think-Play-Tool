@@ -4,7 +4,7 @@ SPEAKING_RATE = 1.2 # 1 is default - use range 0.5-2.0
 
 STT_MODEL = "turbo" # tiny, base 1GB / small 2GB / medium 5GB / large 10 GB / turbo 6GB (VRAM)
 LLM_MODEL = "gemini-2.0-flash"
-TTS_MODEL = "gemini-2.5-pro-tts"
+TTS_MODEL = "gemini-2.5-flash-lite-preview-tts"
 TTS_VOICE = "Enceladus"
 
 LLM_PROMPT = f"""
@@ -18,8 +18,8 @@ If possible try to end sentences with questions for student to keep conversation
 TTS_PROMPT=f"""As a teacher of {LANGUAGE} language talk with calm and polite voice."""
 
 MAX_CHARS = 10000
-TTS_AUDIO_TOKEN_PRICE = 20
-TTS_TEXT_TOKEN_PRICE = 1
+TTS_AUDIO_TOKEN_PRICE = 10
+TTS_TEXT_TOKEN_PRICE = 0.5
 
 LLM_INPUT_TOKEN_PRICE = 0.15
 LLM_OUTPUT_TOKEN_PRICE = 0.6
