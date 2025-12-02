@@ -1,13 +1,16 @@
 from google.cloud import texttospeech
 
-from config import TTS_MODEL, TTS_PROMPT, TTS_VOICE, LANGUAGE
+from config import TTS_MODEL, TTS_PROMPT, TTS_VOICE, LANGUAGE, SPEAKING_RATE
 
 def tts(client_tts: texttospeech.TextToSpeechClient, input_content: str, save_filepath: str = "sample_output.mp3", verbose: bool = False) -> None:
     try:
         if verbose:
             print(f"Setting TTS client with model ({TTS_MODEL} - {TTS_VOICE}) and sending request.")
 
-        synthesis_input = texttospeech.SynthesisInput(text=input_content, prompt=TTS_PROMPT)
+        synthesis_input = texttospeech.SynthesisInput(
+            text=input_content, 
+            prompt=TTS_PROMPT
+        )
         
         voice = texttospeech.VoiceSelectionParams(
             language_code=LANGUAGE,
@@ -16,7 +19,8 @@ def tts(client_tts: texttospeech.TextToSpeechClient, input_content: str, save_fi
         )
 
         audio_config = texttospeech.AudioConfig(
-            audio_encoding=texttospeech.AudioEncoding.MP3
+            audio_encoding=texttospeech.AudioEncoding.MP3,
+            speaking_rate=SPEAKING_RATE
         )
 
         response = client_tts.synthesize_speech(

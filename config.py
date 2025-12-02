@@ -1,10 +1,11 @@
 LANGUAGE="en-US"
 LANGUAGE_LVL = "B1"
+SPEAKING_RATE = 1.2 # 1 is default - use range 0.5-2.0
 
 STT_MODEL = "turbo" # tiny, base 1GB / small 2GB / medium 5GB / large 10 GB / turbo 6GB (VRAM)
 LLM_MODEL = "gemini-2.0-flash"
 TTS_MODEL = "gemini-2.5-pro-tts"
-TTS_VOICE = "Algieba"
+TTS_VOICE = "Enceladus"
 
 LLM_PROMPT = f"""
 You are {LANGUAGE} teacher that help with basic difficulties of learning that language.
