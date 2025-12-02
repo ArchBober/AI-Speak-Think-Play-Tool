@@ -10,13 +10,70 @@
 
 > Ideal for polishing pronunciation in foreign languages, but flexible enough for any audio‑driven workflow.
 
----
+
 
 ## Quick Presentation
+
+### Audio input `hi.wav`
+
 <audio controls>
   <source src="./Samples/hi.wav" type="audio/wav">
   Your browser does not support the audio element.
 </audio>
+
+#### Transcription:
+`Hi, tell me about your day.`
+
+#### Command:
+```bash
+uv run main.py --verbose "Samples/hi.wav"
+```
+#### Logs
+```
+Initializing LLM client
+Initializing STT client (Whisper)
+Loading audio from 'Samples/hi.wav' and finding language
+Detected language: en
+Decoding Audio
+
+---Audio Transcript---
+Hi, tell me about your day.
+------------
+
+Initializing TTS client
+Setting LLM client with model and getting response (gemini-2.0-flash)
+
+---Response---
+Hello! My day has been quite good so far. I've been helping many students with their English, just like I'm doing with you now. How about you, how was your day?
+
+---------
+
+
+===COST===
+Prompt tokens: 119 --- Cost: 0.00001785 $
+Response tokens: 42 --- Cost: 0.00002520 $
+===$$$===
+
+Setting TTS client with model (gemini-2.5-flash-lite-preview-tts - Enceladus) and sending request.
+Got response, saving it to file
+
+===COST===
+Text tokens: 224 --- Cost: 0.000112 $
+Audio tokens: 247 --- Cost: 0.002470 $
+===$$$===
+
+Audio content written to file: response.mp3
+```
+
+#### Audio Output 
+
+<audio controls>
+  <source src="./Samples/example_response2.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+#### Transcription:
+`Hello! My day has been quite good so far. I've been helping many students with their English, just like I'm doing with you now. How about you, how was your day?`
 
 ### Prerequisites  
 
