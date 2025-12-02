@@ -1,4 +1,4 @@
-## AI Audio Transcribing Tool 0.1.0  
+## AI Speak‑Think‑Play Tool 0.1.0  
 *A lightweight utility for interacting with an LLM via audio (or a text prompt) and receiving spoken responses.*
 
 ---

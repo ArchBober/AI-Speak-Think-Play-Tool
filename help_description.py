@@ -1,4 +1,4 @@
-HELP_DESCRIPTION = '''AI Audio Transcribing Tool 0.1.0 for communicating with LLM model through audio file or prompt and getting speech response. 
+HELP_DESCRIPTION = '''AI Speak-Think-Play Tool 0.1.0 for communicating with LLM model through audio file or prompt and getting speech response. 
 Designed mainly for polishing speaking in foreign languages with small privacy upgrade by using local Speech-To-Text (STT) model but can also be used for other purposes. 
 LLM and Text-To-Speech model is designed at the moment to use Gemini available models. 
 To use this project user needs to have set API key for Vertex AI service (set in .env under VERTEX_AI_API_KEY) and have OAuth2 secret json file available from Google Cloud services by setting up project and activating TTS api (json filepath need to be in .env under SECRET_JSON_FILEPATH).
