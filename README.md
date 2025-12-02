@@ -14,7 +14,7 @@
 
 ## Quick Presentation
 <audio controls>
-  <source src="./Samples/hi.wav" type="audio/mpeg">
+  <source src="Samples/hi.wav" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
