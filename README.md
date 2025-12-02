@@ -12,6 +12,12 @@
 
 ---
 
+## Quick Presentation
+<audio controls>
+  <source src="./Samples/hi.wav" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 ### Prerequisites  
 
 | Item | How to obtain |
